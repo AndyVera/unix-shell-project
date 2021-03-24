@@ -98,8 +98,8 @@ bool redirectinput = false;
             else if(pid == 0){   
                 //printf("Child Process created...\n");
 
-                //printf("\nFirst word: %s\n", words[0]);
-                //printf("Second word: %s\n\n", words[1]);
+                printf("\nFirst word: %s\n", words[0]);
+                printf("Second word: %s\n\n", words[1]);
                 
                 //regular commands with no redirection of output and input
                 if (words[1] == '\0'){
@@ -107,9 +107,15 @@ bool redirectinput = false;
                   printf("\n\n");
                 }
 
+                //instance when cat "filename" is used
+                if(words[2] == '\0'){
+                  execvp(words[0], words);
+                  printf("\n\n");
+                }
+
                 //redirects input from file and executes it
-                // format :
-                //    < "filename" 
+                //format :
+                // < "filename" 
                 if(strncmp(words[0], "<", 1) == 0){
                   printf("getting input from %s\n\n", words[1]);
                   char infromfile[BUFSIZ];
@@ -135,7 +141,7 @@ bool redirectinput = false;
                   printf("\n\n");
                 }
 
-                //case for cat "filename" > "outputfile"
+                // //case for cat "filename" > "outputfile"
                 if(strncmp(words[2], ">", 1) == 0 && (strncmp(words[0], "cat", 3) == 0)){
                   printf("output will be stored in %s\n\n", words[3]);
                   int fd_out = open(words[3], O_WRONLY | O_TRUNC | O_CREAT);
@@ -148,6 +154,5 @@ bool redirectinput = false;
                 }
             }
         }
-
    }
   }
