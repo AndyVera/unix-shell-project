@@ -1,7 +1,7 @@
 # unix shell project
-#CPSC 351 - Operating Systems
+# CPSC 351 - Operating Systems
 
-unix shell that creates a child process that can perform task </br>
+Unix shell that creates a child process that can perform task </br>
 </br>
 <u>tasks include:</u>
 - using basic commands such as "ls" and "cat"
