@@ -98,8 +98,8 @@ bool redirectinput = false;
             else if(pid == 0){   
                 //printf("Child Process created...\n");
 
-                printf("\nFirst word: %s\n", words[0]);
-                printf("Second word: %s\n\n", words[1]);
+                //printf("\nFirst word: %s\n", words[0]);
+                //printf("Second word: %s\n\n", words[1]);
                 
                 //regular commands with no redirection of output and input
                 if (words[1] == '\0'){
