@@ -1,4 +1,5 @@
-# unix-shell-project
+# unix shell project
+#CPSC 351 - Operating Systems
 
 unix shell that creates a child process that can perform task </br>
 </br>
